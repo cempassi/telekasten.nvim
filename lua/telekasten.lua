@@ -2142,6 +2142,7 @@ local function FollowLink(opts)
             vim.cmd("normal yi]")
             title = vim.fn.getreg('"0')
             title = title:gsub("^(%[)(.+)(%])$", "%2")
+            title = title:gsub("^(.+)|(.+)$", "%1")
         else
             -- we are in an external [link]
             vim.cmd("normal yi)")
